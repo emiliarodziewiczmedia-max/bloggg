@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NOTATNIK /// vault</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23050505'/%3E%3Cpath d='M6 26V6l20 20V6' stroke='%23b8ff2e' stroke-width='4' fill='none'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="boot" class="boot">
+  <div class="boot-inner">
+    <pre id="boot-log" class="boot-log"></pre>
+    <div class="boot-bar"><i id="boot-fill"></i></div>
+    <button id="boot-skip" class="boot-skip">POMIŃ ⏎</button>
+  </div>
+</div>
+
+<div class="scanlines" aria-hidden="true"></div>
+<div class="noise" aria-hidden="true"></div>
+<div id="progress" class="progress" aria-hidden="true"></div>
+
+<header class="top">
+  <button id="menu-btn" class="icon-btn" title="Menu" aria-label="Menu">☰</button>
+  <a class="brand" href="#/">
+    <span class="brand-mark">N///</span>
+    <span class="brand-name" id="brand-name">NOTATNIK</span>
+  </a>
+  <nav class="top-nav">
+    <a href="#/" data-route="home">START</a>
+    <a href="#/graph" data-route="graph">GRAF</a>
+    <a href="#/tags" data-route="tags">TAGI</a>
+    <a href="#/all" data-route="all">INDEKS</a>
+  </nav>
+  <div class="top-right">
+    <button id="random-btn" class="icon-btn mono" title="Losowa notatka">⤭ LOS</button>
+    <button id="search-btn" class="search-btn"><span>SZUKAJ</span><kbd>⌘K</kbd></button>
+  </div>
+</header>
+
+<div class="layout">
+  <aside id="sidebar" class="sidebar">
+    <div class="side-head">
+      <span class="mono dim">// EKSPLORATOR_</span>
+      <span class="mono dim" id="side-count"></span>
+    </div>
+    <div id="tree" class="tree"></div>
+    <div class="side-foot mono dim">
+      <div id="build-info"></div>
+    </div>
+  </aside>
+  <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
+
+  <main id="main" class="main"></main>
+</div>
+
+<div id="search" class="search-overlay">
+  <div class="search-box">
+    <div class="search-row">
+      <span class="mono acid">&gt;_</span>
+      <input id="search-input" type="text" placeholder="szukaj…" autocomplete="off" spellcheck="false">
+      <kbd>ESC</kbd>
+    </div>
+    <div id="search-results" class="search-results"></div>
+  </div>
+</div>
+
+<div id="hover-card" class="hover-card"></div>
+
+<script src="vendor/marked.min.js"></script>
+<script src="vendor/mermaid.min.js"></script>
+<script src="fx.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
